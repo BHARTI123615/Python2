@@ -1,0 +1,87 @@
+# Python Concepts in One File
+# Author: Bharti
+
+# 1️⃣ Variables & Data Types
+x = 10
+y = 3.14
+name = "Bharti"
+is_student = True
+numbers = [1, 2, 3]
+person = {"name": "Bharti", "age": 21}
+
+# 2️⃣ Control Flow
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is small")
+
+for num in numbers:
+    print("Loop:", num)
+
+while x > 0:
+    x -= 3
+    print("Countdown:", x)
+
+# 3️⃣ Functions
+def greet(user):
+    return f"Hello, {user}!"
+
+print(greet(name))
+
+# 4️⃣ Classes & Objects
+class Student:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+    
+    def show(self):
+        print(f"Student: {self.name}, Roll: {self.roll}")
+
+s1 = Student("Bharti", 123)
+s1.show()
+
+# 5️⃣ Exception Handling
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Error: Division by zero!")
+
+# 6️⃣ File Handling
+with open("sample.txt", "w") as f:
+    f.write("This is a sample file.")
+
+with open("sample.txt", "r") as f:
+    print("File content:", f.read())
+
+# 7️⃣ Modules & Imports
+import math
+print("Square root of 16:", math.sqrt(16))
+
+# 8️⃣ List Comprehension & Lambda
+squares = [n**2 for n in range(5)]
+print("Squares:", squares)
+
+add = lambda a, b: a + b
+print("Lambda add:", add(5, 7))
+
+# 9️⃣ Decorators
+def decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@decorator
+def say_hi():
+    print("Hi!")
+
+say_hi()
+
+# 🔟 Generators
+def gen_nums():
+    for i in range(3):
+        yield i
+
+for val in gen_nums():
+    print("Generated:", val)
